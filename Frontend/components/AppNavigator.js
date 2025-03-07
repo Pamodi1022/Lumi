@@ -5,6 +5,9 @@ import welcome2 from '../components/welcome2';
 import welcome3 from '../components/welcome3';
 import Login from '../components/Login';
 import Register from '../components/Register';
+import Home from '../components/Home';
+import EditProfile from '../components/EditProfile';
+import Profilesave from '../components/Profilesave';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +19,9 @@ const AppNavigator = () => {
       <Stack.Screen name="welcome3" component={welcome3} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Register" component={Register} />
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="EditProfile" component={EditProfile} />
+      <Stack.Screen name="Profilesave" component={Profilesave} />
     </Stack.Navigator>
   );
 };
