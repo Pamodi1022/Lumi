@@ -37,7 +37,7 @@ export default function OnboardingScreen({ navigation }) {
         
         <TouchableOpacity 
           style={styles.nextButton}
-          onPress={() => navigation && navigation.navigate('NextScreen')}
+          onPress={() => navigation && navigation.navigate('welcome2')}
         >
           <Text style={styles.buttonText}>Next</Text>
         </TouchableOpacity>
@@ -78,8 +78,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: 'black',
+    borderWidth: 2,
+    borderColor: '#333',
+    position: 'relative',
     marginBottom: 15,
   },
   robotIcon: {
