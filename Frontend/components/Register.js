@@ -43,9 +43,13 @@ export default function Register({ navigation }) {
         <Text style={{ fontWeight: 'bold' }}>Terms of use</Text> and <Text style={{ fontWeight: 'bold' }}>privacy policy</Text>.
       </Text>
 
-      <TouchableOpacity style={styles.registerButton}>
+      <TouchableOpacity 
+        style={styles.registerButton} 
+        onPress={() => navigation.navigate('Home')}
+      >
         <Text style={styles.registerText}>Register</Text>
       </TouchableOpacity>
+
 
       <Text style={styles.loginText}>
         Already have an Account?{' '}
