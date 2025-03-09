@@ -40,7 +40,76 @@ const registerUser = async (req, res) => {
       res.status(500).json({ error: 'Error registering user: ' + error.message });
     }
   };
+
+  const loginUser = async (req, res) => {
+    try {
+      const { email, password } = req.body;
+      console.log("Received login request for:", email);
+      
+      try {
+        // Check if user exists
+        const userSnapshot = await db.collection('users').where('email', '==', email).get();
+        console.log("User query complete");
+        
+        if (userSnapshot.empty) {
+          return res.status(400).json({ message: 'Invalid credentials' });
+        }
+        
+        const userDoc = userSnapshot.docs[0];
+        const user = userDoc.data();
+        console.log("User found, checking password");
+        
+        try {
+          // Verify password
+          const isValidPassword = await bcrypt.compare(password, user.password);
+          console.log("Password verification result:", isValidPassword);
+          
+          if (!isValidPassword) {
+            return res.status(400).json({ message: 'Invalid credentials' });
+          }
+          
+          try {
+            // Generate JWT token
+            console.log("Generating token");
+            const token = generateToken(email);
+            console.log("Token generated");
+            
+            try {
+              // Add user to the "login" collection
+              console.log("Adding to login collection");
+              await db.collection('login').doc(email).set({
+                email,
+                loginTime: admin.firestore.FieldValue.serverTimestamp(),
+              });
+              console.log("Login record created");
+              
+              res.json({ token });
+            } catch (loginError) {
+              console.error('Error adding login record:', loginError);
+              res.status(500).json({ message: 'Error updating login records' });
+            }
+          } catch (tokenError) {
+            console.error('Token generation error:', tokenError);
+            res.status(500).json({ message: 'Error generating authentication token' });
+          }
+        } catch (passwordError) {
+          console.error('Password comparison error:', passwordError);
+          res.status(500).json({ message: 'Error verifying credentials' });
+        }
+      } catch (userQueryError) {
+        console.error('User query error:', userQueryError);
+        res.status(500).json({ message: 'Error retrieving user data' });
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      res.status(500).json({ message: 'Error logging in' });
+    }
+  };
+  
   
   module.exports = {
-    registerUser
+    registerUser,
+    loginUser
   };
+
+  
