@@ -8,6 +8,7 @@ import Register from '../components/Register';
 import Home from '../components/Home';
 import EditProfile from '../components/EditProfile';
 import Profilesave from '../components/Profilesave';
+import Friend from '../components/Friend';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ const AppNavigator = () => {
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="EditProfile" component={EditProfile} />
       <Stack.Screen name="Profilesave" component={Profilesave} />
+      <Stack.Screen name="Friend" component={Friend} />
     </Stack.Navigator>
   );
 };
