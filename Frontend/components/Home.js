@@ -18,7 +18,10 @@ export default function HomeScreen({ navigation }) {
       {/* Main Content */}
       <View style={styles.content}>
         {/* Chatbot Card */}
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity 
+          style={styles.card} 
+          onPress={() => navigation.navigate('Friend')}
+        >
           <View style={styles.cardLeftContent}>
             <Text style={styles.cardTitle}>Chatbot</Text>
             <Text style={styles.cardDescription}>
