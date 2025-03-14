@@ -46,7 +46,7 @@ Ensure you have the following installed:
 
 ### Clone the Repository
 ```sh
- git clone https://github.com/yourusername/lumi-app.git
+ git clone https://github.com/Pamodi1022/Lumi
  cd lumi-app
 ```
 
