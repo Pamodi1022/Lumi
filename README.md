@@ -60,10 +60,6 @@ Ensure you have the following installed:
 ```sh
  npx react-native run-android
 ```
-#### For iOS
-```sh
- npx react-native run-ios
-```
 
 ## 📌 Roadmap
 - [ ] Improve chatbot AI with **sentiment analysis**.
