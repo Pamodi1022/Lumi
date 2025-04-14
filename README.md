@@ -1,6 +1,6 @@
 # Lumi - Your AI Companion for a Healthier Mind!
 
-![Lumi Logo](Frontend/assets/robot.png) <!-- Replace with actual logo path -->
+![Lumi Logo](Frontend/assets/robot.png) 
 
 ## ✨ Lumi - Your Personal AI Companion
 Lumi is a smart, intuitive, and friendly personal companion app designed to enhance your mental well-being. Built using **React Native, Kotlin, Node.js, and Firebase**, Lumi offers a unique blend of AI-powered conversations, personalized meditations, and a journal to capture your thoughts and memories.
