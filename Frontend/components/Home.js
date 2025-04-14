@@ -1,6 +1,13 @@
-import React from 'react';
-import { View, Text, Image, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import React from "react";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  SafeAreaView,
+  TouchableOpacity,
+} from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -8,19 +15,22 @@ export default function HomeScreen({ navigation }) {
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.profileContainer}>
-            <TouchableOpacity onPress={() => navigation.navigate('Profilesave')}>
-                <Image source={require('../assets/profile.png')} style={styles.profilePic} />
-            </TouchableOpacity>
-            <Text style={styles.greeting}>Hi, Pamodi</Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Profilesave")}>
+            <Image
+              source={require("../assets/profile.png")}
+              style={styles.profilePic}
+            />
+          </TouchableOpacity>
+          <Text style={styles.greeting}>Hi, Pamodi</Text>
         </View>
       </View>
 
       {/* Main Content */}
       <View style={styles.content}>
         {/* Chatbot Card */}
-        <TouchableOpacity 
-          style={styles.card} 
-          onPress={() => navigation.navigate('Friend')}
+        <TouchableOpacity
+          style={styles.card}
+          onPress={() => navigation.navigate("Friend")}
         >
           <View style={styles.cardLeftContent}>
             <Text style={styles.cardTitle}>Chatbot</Text>
@@ -33,7 +43,7 @@ export default function HomeScreen({ navigation }) {
               <Text style={styles.chatText}>Hello</Text>
             </View> */}
             <Image
-              source={require('../assets/chatbot.png')}
+              source={require("../assets/chatbot.png")}
               style={styles.botIcon}
             />
           </View>
@@ -49,7 +59,7 @@ export default function HomeScreen({ navigation }) {
           </View>
           <View style={styles.cardRightContent}>
             <Image
-              source={require('../assets/diary.png')}
+              source={require("../assets/diary.png")}
               style={styles.cardIcon}
             />
           </View>
@@ -60,12 +70,13 @@ export default function HomeScreen({ navigation }) {
           <View style={styles.cardLeftContent}>
             <Text style={styles.cardTitle}>Meditation</Text>
             <Text style={styles.cardDescription}>
-              Boost your well-being - whether it's stress or mental health - and stay fit.
+              Boost your well-being - whether it's stress or mental health - and
+              stay fit.
             </Text>
           </View>
           <View style={styles.cardRightContent}>
             <Image
-              source={require('../assets/meditation.png')}
+              source={require("../assets/meditation.png")}
               style={styles.cardIcon}
             />
           </View>
@@ -78,14 +89,17 @@ export default function HomeScreen({ navigation }) {
           <TouchableOpacity style={styles.navButton}>
             <View style={styles.homeButton}>
               <Image
-                source={require('../assets/home.png')}
+                source={require("../assets/home.png")}
                 style={styles.navIcon}
               />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('Profilesave')}>
+          <TouchableOpacity
+            style={styles.navButton}
+            onPress={() => navigation.navigate("Profilesave")}
+          >
             <Image
-              source={require('../assets/profile.png')}
+              source={require("../assets/profile.png")}
               style={styles.navIcon}
             />
           </TouchableOpacity>
@@ -93,27 +107,26 @@ export default function HomeScreen({ navigation }) {
       </View>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#e8ded1',
+    backgroundColor: "#e8ded1",
   },
   header: {
     paddingTop: 22,
-    
   },
   profileContainer: {
     flexDirection: "row",
-      width: "100%",
-      height: 80,
-      backgroundColor: "#b8c5b2",
-      padding: 20,
-      alignItems: "center",
-      elevation: 3,
-      marginBottom: 10,
-      marginTop: -20, 
+    width: "100%",
+    height: 80,
+    backgroundColor: "#b8c5b2",
+    padding: 20,
+    alignItems: "center",
+    elevation: 3,
+    marginBottom: 10,
+    marginTop: -20,
   },
   profilePic: {
     width: 40,
@@ -121,12 +134,12 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     marginRight: 10,
     marginTop: 17,
-    resizeMode: 'contain',
+    resizeMode: "contain",
   },
   greeting: {
     fontSize: 20,
-    fontWeight: 'bold',
-    color: '#000',
+    fontWeight: "bold",
+    color: "#000",
     marginTop: 15,
     marginLeft: 10,
   },
@@ -136,80 +149,80 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   card: {
-    backgroundColor: '#b8c5b2',
+    backgroundColor: "#b8c5b2",
     borderRadius: 20,
     padding: 20,
     marginBottom: 15,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   cardLeftContent: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   cardTitle: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 5,
-    color: '#000',
+    color: "#000",
   },
   cardDescription: {
     fontSize: 14,
-    color: '#000',
-    width: '90%',
+    color: "#000",
+    width: "90%",
   },
   cardRightContent: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     width: 80,
   },
   cardIcon: {
     width: 70,
     height: 70,
-    resizeMode: 'contain',
+    resizeMode: "contain",
   },
   botIcon: {
     width: 150,
     height: 120,
-    resizeMode: 'contain',
+    resizeMode: "contain",
   },
   chatBubble: {
-    backgroundColor: '#8edee5',
+    backgroundColor: "#8edee5",
     paddingHorizontal: 10,
     paddingVertical: 5,
     borderRadius: 12,
-    position: 'absolute',
+    position: "absolute",
     top: -10,
     right: 0,
   },
   chatText: {
     fontSize: 12,
-    color: '#fff',
+    color: "#fff",
   },
   bottomNav: {
     paddingHorizontal: 60,
     paddingBottom: 20,
   },
   navContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#e0e0d8',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#e0e0d8",
     borderRadius: 25,
     paddingVertical: 10,
   },
   navButton: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
   },
   homeButton: {
-    backgroundColor: '#b8c5b2',
+    backgroundColor: "#b8c5b2",
     padding: 10,
     borderRadius: 20,
   },
   navIcon: {
     width: 20,
     height: 20,
-    resizeMode: 'contain',
+    resizeMode: "contain",
   },
 });

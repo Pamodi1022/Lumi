@@ -1,48 +1,55 @@
-import React from 'react';
-import { 
-  View, 
-  Text, 
-  Image, 
-  StyleSheet, 
-  SafeAreaView, 
+import React from "react";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  SafeAreaView,
   StatusBar,
-  TouchableOpacity
-} from 'react-native';
+  TouchableOpacity,
+} from "react-native";
 
 export default function ProfileSaveScreen({ navigation, route }) {
   // Assuming these values are passed from EditProfileScreen
   // If not, you can set default values or use state management
-  const { name = 'username', email = 'Email', password = 'Password', dateOfBirth = '23/03/2002' } = route.params || {};
+  const {
+    name = "username",
+    email = "Email",
+    password = "Password",
+    dateOfBirth = "23/03/2002",
+  } = route.params || {};
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="#e0dbc9" barStyle="dark-content" />
-      
+
       {/* Header with back button and edit button */}
       <View style={styles.header}>
-        <TouchableOpacity 
-            onPress={() => navigation.navigate('Home')} 
-            style={styles.backArrowContainer}>
-            <Text style={styles.backButton}>←</Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Home")}
+          style={styles.backArrowContainer}
+        >
+          <Text style={styles.backButton}>←</Text>
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Profile</Text>
-        <TouchableOpacity 
-            onPress={() => navigation.navigate('EditProfile')} 
-            style={styles.editButtonContainer}>
-            <Text style={styles.editButtonText}>Edit</Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("EditProfile")}
+          style={styles.editButtonContainer}
+        >
+          <Text style={styles.editButtonText}>Edit</Text>
         </TouchableOpacity>
       </View>
-      
+
       {/* Profile picture section */}
       <View style={styles.profileImageContainer}>
         <View style={styles.profileImageWrapper}>
-          <Image 
-            source={require('../assets/profileL.png')} 
-            style={styles.profileImage} 
+          <Image
+            source={require("../assets/profileL.png")}
+            style={styles.profileImage}
           />
         </View>
       </View>
-      
+
       {/* Profile information - read only */}
       <View style={styles.formContainer}>
         <View style={styles.inputGroup}>
@@ -51,21 +58,21 @@ export default function ProfileSaveScreen({ navigation, route }) {
             <Text style={styles.fieldText}>{name}</Text>
           </View>
         </View>
-        
+
         <View style={styles.inputGroup}>
           <Text style={styles.inputLabel}>Email</Text>
           <View style={styles.readOnlyField}>
             <Text style={styles.fieldText}>{email}</Text>
           </View>
         </View>
-        
+
         <View style={styles.inputGroup}>
           <Text style={styles.inputLabel}>Password</Text>
           <View style={styles.readOnlyField}>
             <Text style={styles.fieldText}>••••••••</Text>
           </View>
         </View>
-        
+
         <View style={styles.inputGroup}>
           <Text style={styles.inputLabel}>Date of Birth</Text>
           <View style={styles.readOnlyField}>
@@ -75,17 +82,17 @@ export default function ProfileSaveScreen({ navigation, route }) {
       </View>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#e0dbc9',
+    backgroundColor: "#e0dbc9",
   },
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     padding: 16,
     width: "100%",
     backgroundColor: "#b8c5b2",
@@ -95,54 +102,54 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 20,
-    fontWeight: '600',
-    color: '#333',
-    marginTop: '8%',
-    marginLeft: '18%',
+    fontWeight: "600",
+    color: "#333",
+    marginTop: "8%",
+    marginLeft: "18%",
   },
   backArrowContainer: {
-    position: 'absolute',
+    position: "absolute",
     top: 40,
     left: 22,
     zIndex: 10,
-    width: 40, 
-    height: 40, 
-    borderRadius: 20, 
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    borderWidth: 2, 
-    borderColor: '#000', 
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 2,
+    borderColor: "#000",
   },
   backButton: {
     fontSize: 24,
-    color: 'black',
-    fontWeight: 'bold',
-    textAlign: 'center',
+    color: "black",
+    fontWeight: "bold",
+    textAlign: "center",
     lineHeight: 24,
   },
   editButtonContainer: {
-    position: 'absolute',
+    position: "absolute",
     top: 40,
     right: 22,
     zIndex: 10,
   },
   editButtonText: {
     fontSize: 16,
-    fontWeight: 'bold',
-    color: '#333',
+    fontWeight: "bold",
+    color: "#333",
   },
   profileImageContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     marginVertical: 20,
   },
   profileImageWrapper: {
-    position: 'relative',
+    position: "relative",
     width: 110,
     height: 110,
     borderRadius: 60,
-    backgroundColor: '#b8c5b2',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "#b8c5b2",
+    justifyContent: "center",
+    alignItems: "center",
   },
   profileImage: {
     width: 110,
@@ -157,18 +164,18 @@ const styles = StyleSheet.create({
   },
   inputLabel: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 8,
-    color: '#000',
+    color: "#000",
   },
   readOnlyField: {
-    backgroundColor: '#d2d1c9',
+    backgroundColor: "#d2d1c9",
     borderRadius: 8,
     paddingHorizontal: 16,
     paddingVertical: 12,
   },
   fieldText: {
     fontSize: 16,
-    color: '#666',
-  }
+    color: "#666",
+  },
 });
