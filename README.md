@@ -17,7 +17,6 @@ Lumi is a smart, intuitive, and friendly personal companion app designed to enha
 ### 🧘‍♂️ Personalized Meditations
 - Curated **meditation sessions** to improve mental health.
 - Adaptive meditation recommendations based on your mood and habits.
-- Guided breathing exercises and relaxing soundscapes.
 
 ### 📖 Journal for Memories
 - Maintain a personal **journal** to document daily thoughts and experiences.
