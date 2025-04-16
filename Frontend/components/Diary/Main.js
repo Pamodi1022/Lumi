@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, SafeAreaView, StatusBar } from 'react-native';
-import { styles } from '../Styles/MainStyles'; 
+import { styles } from '../../Styles/MainStyles'; 
 
 const DiaryPage = ({ navigation }) => {
   return (
