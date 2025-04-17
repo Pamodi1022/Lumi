@@ -50,7 +50,10 @@ export default function HomeScreen({ navigation }) {
         </TouchableOpacity>
 
         {/* Journal Card */}
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity
+          style={styles.card}
+          onPress={() => navigation.navigate("Main")}
+        >
           <View style={styles.cardLeftContent}>
             <Text style={styles.cardTitle}>Journal</Text>
             <Text style={styles.cardDescription}>
