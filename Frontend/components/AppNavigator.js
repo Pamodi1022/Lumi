@@ -10,6 +10,7 @@ import EditProfile from '../components/EditProfile';
 import Profilesave from '../components/Profilesave';
 import Friend from '../components/Friend';
 import Main from '../components/Diary/Main';
+import NoteScreen from '../components/Diary/NoteScreen';
 
 const Stack = createStackNavigator();
 
@@ -26,6 +27,7 @@ const AppNavigator = () => {
       <Stack.Screen name="Profilesave" component={Profilesave} />
       <Stack.Screen name="Friend" component={Friend} />
       <Stack.Screen name="Main" component={Main} />
+      <Stack.Screen name="NoteScreen" component={NoteScreen} />
     </Stack.Navigator>
   );
 };
