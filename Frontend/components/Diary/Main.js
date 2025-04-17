@@ -48,7 +48,7 @@ const DiaryPage = ({ navigation }) => {
       </View>
       
       {/* Floating action button */}
-      <TouchableOpacity style={styles.fab}>
+      <TouchableOpacity style={styles.fab} onPress={() => navigation.navigate("NoteScreen")}>
         <Text style={styles.fabIcon}>+</Text>
       </TouchableOpacity>
     </SafeAreaView>
