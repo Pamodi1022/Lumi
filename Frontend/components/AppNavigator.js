@@ -1,16 +1,16 @@
-import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import welcome1 from '../components/welcome1';
-import welcome2 from '../components/welcome2';
-import welcome3 from '../components/welcome3';
-import Login from '../components/Login';
-import Register from '../components/Register';
-import Home from '../components/Home';
-import EditProfile from '../components/EditProfile';
-import Profilesave from '../components/Profilesave';
-import Friend from '../components/Friend';
-import Main from '../components/Diary/Main';
-import NoteScreen from '../components/Diary/NoteScreen';
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import welcome1 from "../components/welcome1";
+import welcome2 from "../components/welcome2";
+import welcome3 from "../components/welcome3";
+import Login from "../components/Login";
+import Register from "../components/Register";
+import Home from "../components/Home";
+import EditProfile from "../components/EditProfile";
+import Profilesave from "../components/Profilesave";
+import Friend from "../components/Friend";
+import Main from "../components/Diary/Main";
+import NoteScreen from "../components/Diary/NoteScreen";
 
 const Stack = createStackNavigator();
 
