@@ -1,4 +1,4 @@
-# Lumi - Your AI Companion for a Healthier Mind!
+# Lumi - Your AI Companion for a Healthier Mind
 
 ![Lumi Logo](Frontend/assets/robot.png) 
 
